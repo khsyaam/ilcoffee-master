@@ -34,7 +34,7 @@ Route::post('/adminproduk', 'ProdukController@store');
 Route::get('/adminproduk/detail/{produk}', 'ProdukController@show');
 Route::get('/adminproduk/detail/{produk}/edit', 'ProdukController@edit');
 Route::patch('/adminproduk/detail/{produk}', 'ProdukController@update');
-Route::delete('/adminproduk', 'ProdukController@destroy');
+Route::get('/adminproduk/detail/{produk}/delete', 'ProdukController@destroy');
 //
 //route admin produk apparel
 Route::get('/adminprodukap', 'ProdukapController@indexapparel');

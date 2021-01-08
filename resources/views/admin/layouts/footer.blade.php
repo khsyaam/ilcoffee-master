@@ -73,18 +73,18 @@
 } );
 </script>
 <script>
-  $('.hapusph').click(function(){
-    var ph_id = $(this).attr('ph-id');
+  $('.hapusbeans').click(function(){
+    var produk_id = $(this).attr('produk-id');
     swal({
       title: "Kamu Yakin?",
-      text: "Data PH ini mau dihapus??",  
+      text: "Data Beans ini mau dihapus??",  
       icon: "warning",
       buttons: true,
       dangerMode: true,
     })
     .then((willDelete) => {
       if (willDelete) {
-        window.location = "/pengurus-harian/detail/"+ph_id+"/delete";
+        window.location = "/adminproduk/detail/"+produk_id+"/delete";
         swal("Selamat! Data berhasil dihapus!", {
           icon: "success",
         });
@@ -93,18 +93,18 @@
   });
 </script>
 <script>
-  $('.hapusiptek').click(function(){
-    var iptek_id = $(this).attr('iptek-id');
+  $('.hapusapparel').click(function(){
+    var produkap_id = $(this).attr('produkap-id');
     swal({
       title: "Kamu Yakin?",
-      text: "Data IPTEK ini mau dihapus??",  
+      text: "Data Apparel ini mau dihapus??",  
       icon: "warning",
       buttons: true,
       dangerMode: true,
     })
     .then((willDelete) => {
       if (willDelete) {
-        window.location = "/pengurus-iptek/detail/"+iptek_id+"/delete";
+        window.location = "/adminprodukap/detail/"+produkap_id+"/delete";
         swal("Selamat! Data berhasil dihapus!", {
           icon: "success",
         });
@@ -112,119 +112,14 @@
     });
   });
 </script>
+
 <script>
-  $('.hapuslitbang').click(function(){
-    var litbang_id = $(this).attr('litbang-id');
-    swal({
-      title: "Kamu Yakin?",
-      text: "Data Litbang ini mau dihapus??",  
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        window.location = "/pengurus-litbang/detail/"+litbang_id+"/delete";
-        swal("Selamat! Data berhasil dihapus!", {
-          icon: "success",
-        });
-      }  
-    });
-  });
-</script>
-<script>
-  $('.hapusinfokom').click(function(){
-    var infokom_id = $(this).attr('infokom-id');
-    swal({
-      title: "Kamu Yakin?",
-      text: "Data Infokom ini mau dihapus??",  
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        window.location = "/pengurus-infokom/detail/"+infokom_id+"/delete";
-        swal("Selamat! Data berhasil dihapus!", {
-          icon: "success",
-        });
-      }  
-    });
-  });
-</script>
-<script>
-  $('.hapusblog').click(function(){
-    var blog_id = $(this).attr('blog-id');
-    swal({
-      title: "Kamu Yakin?",
-      text: "Data Blog ini mau dihapus??",  
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        window.location = "/informatic-media/"+blog_id+"/delete";
-        swal("Selamat! Data berhasil dihapus!", {
-          icon: "success",
-        });
-      }  
-    });
-  });
-</script>
-<script>
-  $('.hapusevent').click(function(){
-    var event_id = $(this).attr('event-id');
-    swal({
-      title: "Kamu Yakin?",
-      text: "Data Acara ini mau dihapus??",  
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        window.location = "/acara/"+event_id+"/delete";
-        swal("Selamat! Data berhasil dihapus!", {
-          icon: "success",
-        });
-      }  
-    });
-  });
-</script>
-<script>
-  $('.hapusdocumentation').click(function(){
-    var documentation_id = $(this).attr('documentation-id');
-    swal({
-      title: "Kamu Yakin?",
-      text: "Data Dokumentasi ini mau dihapus??",  
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        window.location = "/dokumentasi/"+documentation_id+"/delete";
-        swal("Selamat! Data berhasil dihapus!", {
-          icon: "success",
-        });
-      }  
-    });
-  });
-</script>
-{{-- ini notif opsi lain jika berhasil hapus data --}}
-{{-- <script> 
-  @if (Session::has('sukses'))
-    toastr.success("{{ Session::get('sukses') }}", "Sukses")
-  @endif
-</script> --}}
-<script>
-  $('.tambahph').click(function(){
+  $('.tambah').click(function(){
       swal("Selamat!", "Data berhasil ditambahkan", "success"); 
   })
 </script>
 <script>
-  $('.editph').click(function(){
+  $('.edit').click(function(){
     swal("Selamat!", "Data berhasil diubah", "success");
   })
 </script>

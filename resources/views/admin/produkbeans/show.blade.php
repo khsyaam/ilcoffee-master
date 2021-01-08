@@ -28,13 +28,7 @@
                 <p class="card-text">{{ $produk->description }}</p>
                 <a href="/adminproduk" class="btn btn-primary btn-sm">Kembali</a>
                 <a href="{{ $produk->id }}/edit" class="btn btn-success btn-sm">Edit</a>
-                {{-- <form action="{{ $leader->id }}" method="POST" class="d-inline">
-                    @method('delete')
-                    @csrf
-                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                </form> --}}
-                
-                <a href="#" class="btn btn-danger btn-sm hapusph" produk-id="{{ $produk->id }}">Hapus</a>
+                <a href="#" class="btn btn-danger btn-sm hapusbeans" produk-id="{{ $produk->id }}">Hapus</a>
             </div>
     </div>
     </div>

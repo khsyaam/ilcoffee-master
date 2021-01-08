@@ -28,7 +28,7 @@
                 <p class="card-text">{{ $produkap->description }}</p>
                 <a href="/adminprodukpa" class="btn btn-primary btn-sm">Kembali</a>
                 <a href="{{ $produkap->id }}/edit" class="btn btn-success btn-sm">Edit</a>
-                <a href="#" class="btn btn-danger btn-sm hapusap" produkap-id="{{ $produkap->id }}">Hapus</a>
+                <a href="#" class="btn btn-danger btn-sm hapusapparel" produkap-id="{{ $produkap->id }}">Hapus</a>
             </div>
     </div>
     </div>

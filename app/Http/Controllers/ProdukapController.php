@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Produkap;
 use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
-use PhpParser\Lexer;
+// use Illuminate\Http\UploadedFile;
+// use PhpParser\Lexer;
 
 class ProdukapController extends Controller
 {
