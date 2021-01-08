@@ -11,7 +11,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="/pengurus-harian" style="text-decoration:none">Produk</a></li>
+            <li class="breadcrumb-item"><a href="/admiproduk" style="text-decoration:none">Produk</a></li>
             <li class="breadcrumb-item active">Edit Produk</li>
           </ol>
         </div><!-- /.col -->
@@ -28,7 +28,7 @@
             <div class="card-header">
             <h3 class="card-title">Form Edit Produk</h3>
             </div>
-            <form role="form" method="post" action="/pengurus-harian/detail/{{ $produkap->id }}" enctype="multipart/form-data">
+            <form role="form" method="post" action="/adminprodukap/detail/{{ $produkap->id }}" enctype="multipart/form-data">
                 @method('patch')
                 @csrf
             <div class="card-body">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-group col-md-6">
                 <label for="description">Deskripsi</label>
-                <input type="text" class="form-control @error('jabatan') is-invalid @enderror" id="description" placeholder="Masukkan deskripsi" name="description" value="{{ $produkap->description}}">
+                <input type="text" class="form-control @error('description') is-invalid @enderror" id="description" placeholder="Masukkan deskripsi" name="description" value="{{ $produkap->description}}">
                 @error('description')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -55,7 +55,7 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary editph">Submit</button>
+                <button type="submit" class="btn btn-primary edit">Submit</button>
             </div>
             </form>
         </div>

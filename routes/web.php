@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProdukapController;
 
 
 /*
@@ -22,12 +24,9 @@ use App\Http\Controllers\UserController;
 Auth::routes();
 //route dashboard
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::group(['middleware' => ['auth','cekuser:admin']], function(){
+Route::group(['middleware' => ['auth']], function(){
 
-Route::resource('users', UserController::class, ['except' => ['create', 'edit']]);
-    
-    
-
+// Route::resource('users', UserController::class, ['except' => ['create', 'edit']]); 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //route admin produk beans
 Route::get('/adminproduk', 'ProdukController@indexbeans');
@@ -35,7 +34,7 @@ Route::post('/adminproduk', 'ProdukController@store');
 Route::get('/adminproduk/detail/{produk}', 'ProdukController@show');
 Route::get('/adminproduk/detail/{produk}/edit', 'ProdukController@edit');
 Route::patch('/adminproduk/detail/{produk}', 'ProdukController@update');
-Route::get('/adminproduk/detail/{produk}/delete', 'ProdukController@destroy');
+Route::delete('/adminproduk', 'ProdukController@destroy');
 //
 //route admin produk apparel
 Route::get('/adminprodukap', 'ProdukapController@indexapparel');
@@ -48,8 +47,7 @@ Route::get('/adminprodukap/detail/{produkap}/delete', 'ProdukapController@destro
 
 //route dashboard masukan
 Route::get('/masukan', 'CommentsController@index');
-// });
-
+});
 
 //route front pengunjung
 Route::get('/', 'IndexController@Index');
@@ -61,11 +59,6 @@ Route::get('/produkapparel', 'ProdukapController@berandaapparel');
 Route::get('/produkbeans/{produkdetail}', 'DetailController@detailproduct');
 Route::get('/produkapparel/{produkdetail}', 'DetailController@detailproductap');
 Route::get('/kontak', 'ContactController@kontak');
-
-
-// yt middleware : BamaraID 
-
-
 
 
 Auth::routes();

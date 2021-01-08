@@ -28,13 +28,7 @@
                 <p class="card-text">{{ $produkap->description }}</p>
                 <a href="/adminprodukpa" class="btn btn-primary btn-sm">Kembali</a>
                 <a href="{{ $produkap->id }}/edit" class="btn btn-success btn-sm">Edit</a>
-                {{-- <form action="{{ $leader->id }}" method="POST" class="d-inline">
-                    @method('delete')
-                    @csrf
-                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                </form> --}}
-                
-                <a href="#" class="btn btn-danger btn-sm hapusap" ph-id="{{ $produkap->id }}">Hapus</a>
+                <a href="#" class="btn btn-danger btn-sm hapusap" produkap-id="{{ $produkap->id }}">Hapus</a>
             </div>
     </div>
     </div>
