@@ -4,27 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Produk;
 use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
-use PhpParser\Lexer;
+// use Illuminate\Http\UploadedFile;
+// use PhpParser\Lexer;
 
 class ProdukController extends Controller
 {
-
-    // public function listproduct()
-    // {
-    //     // $index = IndexController::all();
-    //     // $this->listproduct = Shop::orderBy('created_at','DESC')->get();
-    //     // $produk = Shops::all();
-    //     return view('users/pages/listproduct');
-    // }
-    
-    
-    // public function detailproduct()
-    // {
-    //     // $index = IndexController::all();
-    //     // $this->listproduct = Shop::orderBy('created_at','DESC')->get();
-    //     return view('users/pages/detailproduct');
-    // }
     /**
      * Display a listing of the resource.
      *
@@ -35,11 +19,6 @@ class ProdukController extends Controller
         $produk = Produk::all();
         return view('admin/produkbeans/index', compact('produk'));
     }
-    // public function indexapparel()
-    // {
-    //     $produk = Produk::all();
-    //     return view('admin/produkapparel/index', compact('produk'));
-    // }
     // beranda
     public function berandabeans()
     {
@@ -47,13 +26,6 @@ class ProdukController extends Controller
         $produk = Produk::all();
         return view('users/pages/listproduct', compact('produk'));
     }
-    // public function berandabeans()
-    // {
-    //     // $leader = Leader::find([1, 2, 3]);
-    //     $produk = Produk::all();
-    //     return view('users/pages/listproduct2', compact('produk'));
-    // }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -72,24 +44,10 @@ class ProdukController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //ini cara panjang
-        // $leader = new Leader;
-        // $leader->nama = $request->nama;
-        // $leader->jabatan = $request->jabatan;
-        // $leader->foto = $request->foto;
-        // $leader -> save();
-
-        // Leader::create([
-        //     'nama' => $request->nama,
-        //     'jabatan' => $request->jabatan,
-        //     'foto' => $request->foto
-        // ]);
-        
+    {        
         if($request->hasFile('foto')){
             $filename = $request->foto->getClientOriginalName();
             $request->foto->storeAs('images', $filename ,'public');
-            //Leader::find(12)->update(['foto' => $filename]);
         }
         $request -> validate([
                 'nama' => 'required',
@@ -103,7 +61,6 @@ class ProdukController extends Controller
             'foto' => $filename
         ]);
         return redirect('/adminproduk');
-        // Leader::create($request->all()); cara simple dpt digunakan jika tidak ada kondisi khusus
     }
 
     /**
@@ -154,14 +111,14 @@ class ProdukController extends Controller
         $request -> validate([
                 'nama' => 'required',
                 'description' => 'required',
-                //'foto' => 'required'
+                'foto' => 'required',
             ]);
 
         Produk::where('id', $produk->id)
                 ->update([
                     'nama' => $request->nama,
                     'description' => $request->description,
-                    // 'foto' => $filename
+                    'foto' => $filename,
                 ]);
         return redirect('/adminproduk');
     }

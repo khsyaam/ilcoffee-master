@@ -60,8 +60,8 @@
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single_product_item">
                                     {{-- <img src="{{asset('/assets')}}/img/product/product_list_1.png" alt="#" class="img-fluid"> --}}
-                                    <img src="{{ asset('/storage/app/public/images/'. $shop->foto) }}" alt="#" class="img-fluid">
-                                    <h3> <a href="#">{{ $shop->nama }}</a> </h3>
+                                    <img src="{{ asset('/storage/images/'. $shop->foto) }}" class="img-fluid">
+                                    <h3> <a>{{ $shop->nama }}</a> </h3>
                                     <p>Dari {{ $shop->description }}</p>
                                 </div>
                             </div>

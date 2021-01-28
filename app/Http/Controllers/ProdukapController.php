@@ -73,19 +73,6 @@ class ProdukapController extends Controller
      */
     public function store(Request $request)
     {
-        //ini cara panjang
-        // $leader = new Leader;
-        // $leader->nama = $request->nama;
-        // $leader->jabatan = $request->jabatan;
-        // $leader->foto = $request->foto;
-        // $leader -> save();
-
-        // Leader::create([
-        //     'nama' => $request->nama,
-        //     'jabatan' => $request->jabatan,
-        //     'foto' => $request->foto
-        // ]);
-        
         if($request->hasFile('foto')){
             $filename = $request->foto->getClientOriginalName();
             $request->foto->storeAs('images', $filename ,'public');
@@ -94,7 +81,7 @@ class ProdukapController extends Controller
         $request -> validate([
                 'nama' => 'required',
                 'description' => 'required',
-                'foto' => 'required'
+                'foto' => 'image|required'
             ]);
 
         Produkap::create([
@@ -103,7 +90,6 @@ class ProdukapController extends Controller
             'foto' => $filename
         ]);
         return redirect('/adminprodukap');
-        // Leader::create($request->all()); cara simple dpt digunakan jika tidak ada kondisi khusus
     }
 
     /**
@@ -154,14 +140,14 @@ class ProdukapController extends Controller
         $request -> validate([
                 'nama' => 'required',
                 'description' => 'required',
-                //'foto' => 'required'
+                'foto' => 'required',
             ]);
 
         Produkap::where('id', $produkap->id)
                 ->update([
                     'nama' => $request->nama,
                     'description' => $request->description,
-                    // 'foto' => $filename
+                    'foto' => $filename,
                 ]);
         return redirect('/adminprodukap');
     }

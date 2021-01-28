@@ -5,7 +5,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProdukapController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +17,10 @@ use App\Http\Controllers\ProdukapController;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
-// });
-
+  //     return view('welcome');
+  // });
+  
+Route::resource('file','File');
 Auth::routes();
 //route dashboard
 Route::get('/home', 'HomeController@index')->name('home');
@@ -32,6 +32,7 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/adminproduk', 'ProdukController@indexbeans');
 Route::post('/adminproduk', 'ProdukController@store');
 Route::get('/adminproduk/detail/{produk}', 'ProdukController@show');
+// Route::post('/adminproduk/detail/{produk}', 'ProdukController@show');
 Route::get('/adminproduk/detail/{produk}/edit', 'ProdukController@edit');
 Route::patch('/adminproduk/detail/{produk}', 'ProdukController@update');
 Route::get('/adminproduk/detail/{produk}/delete', 'ProdukController@destroy');
@@ -40,6 +41,7 @@ Route::get('/adminproduk/detail/{produk}/delete', 'ProdukController@destroy');
 Route::get('/adminprodukap', 'ProdukapController@indexapparel');
 Route::post('/adminprodukap', 'ProdukapController@store');
 Route::get('/adminprodukap/detail/{produkap}', 'ProdukapController@show');
+// Route::post('/adminprodukap/detail/{produkap}', 'ProdukapController@show');
 Route::get('/adminprodukap/detail/{produkap}/edit', 'ProdukapController@edit');
 Route::patch('/adminprodukap/detail/{produkap}', 'ProdukapController@update');
 Route::get('/adminprodukap/detail/{produkap}/delete', 'ProdukapController@destroy');
