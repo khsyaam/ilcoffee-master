@@ -57,9 +57,9 @@ Route::post('/', 'CommentsController@store');
 Route::get('/beranda', 'IndexController@index');
 Route::get('/menu', 'MenuController@menu');
 Route::get('/produkbeans', 'ProdukController@berandabeans');
+Route::get('/produkbeans/detail/{produk}', 'ProdukController@showus');
 Route::get('/produkapparel', 'ProdukapController@berandaapparel');
-Route::get('/produkbeans/{produkdetail}', 'DetailController@detailproduct');
-Route::get('/produkapparel/{produkdetail}', 'DetailController@detailproductap');
+Route::get('/produkapparel/detail/{produkap}', 'ProdukapController@showus');
 Route::get('/kontak', 'ContactController@kontak');
 
 

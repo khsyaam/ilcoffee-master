@@ -102,6 +102,10 @@ class ProdukapController extends Controller
     {
         return view('admin/produkapparel/show', compact('produkap'));
     }
+    public function showus(Produkap $produkap)
+    {
+        return view('users/pages/detailproductap', compact('produkap'));
+    }
 
     /**
      * Show the form for editing the specified resource.

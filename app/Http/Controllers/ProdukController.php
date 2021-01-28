@@ -74,6 +74,11 @@ class ProdukController extends Controller
         return view('admin/produkbeans/show', compact('produk'));
     }
 
+    public function showus(Produk $produk)
+    {
+        return view('users/pages/detailproduct', compact('produk'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
